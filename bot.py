@@ -16,8 +16,10 @@ import json
 from google.oauth2.service_account import Credentials
 
 creds_info = json.loads(os.environ['SERVICE_ACCOUNT_JSON'])
-creds = Credentials.from_service_account_info(creds_info)
+scopes = ['https://www.googleapis.com/auth/spreadsheets']
+creds = Credentials.from_service_account_info(creds_info, scopes=scopes)
 gc = gspread.authorize(creds)
+
 
 sheet = gc.open_by_url(SHEET_URL).sheet1
 
