@@ -59,15 +59,13 @@ def handle_message(message):
         bot.send_message(chat_id, "Enter the code:", reply_markup=code_keyboard())
 
     elif text == "❓ Help":
-            help_text = (
-    "*📽️ How to use the bot:*\n\n"
-    "🔘 Press *🎬 Find a film*.\n"
-    "🔘 Enter the short code for the film (e.g., 812, 90125, etc).\n"
-    "🔘 You'll receive the title and info immediately.\n"
-    "🔔 Make sure you're subscribed to our channel: @HiddenCinemaHub 👈"
-)
-		
-
+        help_text = (
+            "*📽️ How to use the bot:*\n\n"
+            "🔘 Press *🎬 Find a film*.\n"
+            "🔘 Enter the short code for the film (e.g., 812, 90125, etc).\n"
+            "🔘 You'll receive the title and info immediately.\n"
+            "🔔 Make sure you're subscribed to our channel: @HiddenCinemaHub 👈"
+        )
         bot.send_message(chat_id, help_text, parse_mode="Markdown", reply_markup=main_menu())
 
     elif text == "📣 Telegram Channel":
@@ -107,4 +105,5 @@ def handle_message(message):
         bot.send_message(chat_id, "Please use the menu buttons.", reply_markup=main_menu())
 
 bot.polling(none_stop=True)
+
 
